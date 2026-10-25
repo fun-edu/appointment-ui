@@ -1,0 +1,8 @@
+from pymongo import MongoClient
+
+from app.core.config import settings
+
+client = MongoClient(settings.mongodb_uri)
+db = client[settings.database_name]
+
+appointments_collection = db['appointments']
